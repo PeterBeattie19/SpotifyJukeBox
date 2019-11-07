@@ -1,6 +1,16 @@
 from pprint import pprint
+from json_database import JsonDatabase
 
-pprint(JSONReader.read("database.json"))
+db = JsonDatabase("database.json")
+
+pprint(db.data)
+
+db.insert({"test": "ing"})
+
+pprint(db.select("test", "ing"))
+
+
+
 
 
 

@@ -1,14 +1,1 @@
-[
-  {
-    "party_name": "Peter's 21st",
-    "life_span": 60,
-    "OAUTH_details": "#3fgh!123fbg",
-    "playlist_id": "12234"
-  },
-  {
-    "party_name": "Peter's 27th Birthday / Funeral ",
-    "life_span": 300,
-    "OAUTH_details": "#3fgh!1rrfgr23fbg",
-    "playlist_id": "122347654"
-  }
-]
+[{"name": "Peter", "age": "27"}, {"test": "ing"}, {"test": "ing"}]
