@@ -1,18 +1,8 @@
+import time
 from pprint import pprint
 from json_database import JsonDatabase
 
 db = JsonDatabase("database.json")
-
-pprint(db.data)
-
-db.insert({"test": "ing"})
-
-pprint(db.select("test", "ing"))
-
-
-
-
-
 
 
 ''' 
