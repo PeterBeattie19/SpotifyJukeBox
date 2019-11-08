@@ -1,4 +1,4 @@
 /.idea/*
 /.vscode/*
-/main.py
-/database.json
+main.py
+database.json
