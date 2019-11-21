@@ -91,7 +91,6 @@ class JsonDatabase:
         Write contents of self._data to database file
         :return:
         """
-        print(self._data)
         with open(self._db_filename, 'w') as w_file:
             json.dump(self._data, w_file)
 
