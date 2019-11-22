@@ -31,7 +31,6 @@ def get_access_token(code, spot_oauth):
     return res["access_token"]
 
 
-
 sp_oauth = oauth2.SpotifyOAuth(client_id, client_secret, redirect_uri, scope=scope, cache_path=".cache-" + username)
 
 auth_url = sp_oauth.get_authorize_url()
