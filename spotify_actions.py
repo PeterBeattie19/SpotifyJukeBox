@@ -31,3 +31,11 @@ class SpotifyActions:
                                     search_results['tracks']['items']))[0]
             return song_dict['id']
         return search_results['tracks']["items"][0]["id"]
+
+    @staticmethod
+    def parse_link_to_uri(link):
+        start = link.rindex('/')+1
+        stop = link.index('?')
+        track = link[start:stop]
+        spotify_uri = "spotify:track:{}".format(track)
+        return spotify_uri
