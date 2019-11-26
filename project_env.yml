@@ -1,0 +1,5 @@
+name: py36
+channels:
+  - defaults
+prefix: C:\Users\peter\Anaconda3\envs\py36\envs\py36
+
