@@ -49,7 +49,7 @@ def auth():
         _form = request.form
         # Create Party object using details from form
         party_ = Party(_form[party_name_key], _form[user_name_key], _form[auth_code_key])
-        # Create a playlist using details from Party Objecy
+        # Create a playlist using details from Party Object
         playlist_creation_details = spot_actions.create_playlist(party_)
         # Set Party object's playlist_id property to the id from the newly created playlist.
         party_.playlist_id = playlist_creation_details["id"]
@@ -77,7 +77,9 @@ def add_song():
         # song_id = spot_actions.find_song(party_, request.form[song_name_key], request.form[artist_name_key])
         # Add the song to the party playlist
         song_id = request.form["uri"]
-        spot_actions.add_song_to_playlist(party_, song_id)
+        # filter songs
+        explicit_filter = request.form["explicit_filter"]
+        spot_actions.add_song_to_playlist(party_, song_id, explicit_filter)
         return render_template("home.html")
-
     return render_template("add_song.html")
+
