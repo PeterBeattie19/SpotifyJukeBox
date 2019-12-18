@@ -61,7 +61,7 @@
           <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto">
               <h1 class="login-heading mb-4">Add Song</h1>
-              <form>
+              <form action="" method="post">
                 <div class="form-label-group">
                     <input type="text" name="party_name" class="form-control" placeholder="Party" required autofocus>
                     <label for="party_name">Party</label> 
@@ -85,11 +85,11 @@
                 <input class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit" value="Submit">
               </form>
               <!-- currently working on this -->
-                <div>
-                    <a name="prev_track" value = "{{ prev_track }}"></a>
-                    <a name="current_track" value = "{{ current_track }}"></a>
-                    <a name="next_track" value = "{{ next_track }}"></a>
-                </div>
+                <!-- <div>
+                    <a name="prev_track">{{ prev_track }}</a>
+                    <a name="current_track" >{{ current_track }}</a>
+                    <a name="next_track" >{{ next_track }}</a>
+                </div> -->
             </div>
           </div>
         </div>

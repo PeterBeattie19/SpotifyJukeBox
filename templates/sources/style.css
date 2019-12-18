@@ -9,7 +9,7 @@
 }
 
 .bg-image {
-  background-image: url('sources/jukebox.jpg');
+  background-image: url('jukebox.jpg');
   background-size: cover;
   background-position: center;
 }
