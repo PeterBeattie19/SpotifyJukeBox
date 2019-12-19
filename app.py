@@ -80,6 +80,15 @@ def add_song():
         # filter songs
         explicit_filter = request.form["explicit_filter"]
         spot_actions.add_song_to_playlist(party_, song_id, explicit_filter)
+
+        # playlist = spot_actions.get_playlist(party_)
+        # current_track = spot_actions.get_current_track()
+        # # index of current in playlist
+        # current_track_index = playlist.index('')
+        # # todo: error handling for this
+        # prev_track = playlist[current_track_index-1]
+        # next_track = playlist[current_track_index+1]
+        # , current_track_=spot_actions.get_current_track(), prev_track_= , next_track_=
         return render_template("home.html")
     return render_template("add_song.html")
 

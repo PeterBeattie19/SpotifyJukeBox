@@ -21,6 +21,16 @@ class SpotifyActions:
         sp = party.spotify
         return sp.user_playlist(user=party.user, playlist_id=party.playlist_id)
 
+    @staticmethod
+    def get_current_track(party):
+        sp = party.spotify
+        return sp.currently_playing()
+
+    @staticmethod
+    def get_current_track(party):
+        sp = party.spotify
+        return sp.currently_playing()
+
     def get_authorize_url(self):
         return self.sp_oauth.get_authorize_url()
 

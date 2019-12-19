@@ -156,3 +156,29 @@
   -webkit-animation-name: slideIn;
   animation-name: slideIn;
 }
+
+.navbar-custom { 
+   background-color: lightgreen; 
+} 
+
+/*.navbar-bg{
+  background-color: #D0DCE3;
+}*/
+
+/*.navbar-custom {
+    background-color:#229922;
+    color:#ffffff;
+    border-radius:0;
+}*/
+
+
+/*.navbar-title{
+  font-size: 100px;
+}*/
+
+/*.navbar .container .navbar-brand {
+    color: #373535 !important;
+    font-size: 100px !important;
+    margin: 8px 0;
+}
+*/
