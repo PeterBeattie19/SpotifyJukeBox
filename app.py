@@ -79,7 +79,7 @@ def add_song():
         song_id = request.form["uri"]
         # filter songs
         explicit_filter = request.form["explicit_filter"]
+        print(party_)
         spot_actions.add_song_to_playlist(party_, song_id, explicit_filter)
-        return render_template("home.html")
+        return redirect(url_for("home"))
     return render_template("add_song.html")
-
