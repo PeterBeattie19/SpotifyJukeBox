@@ -69,7 +69,10 @@ def get_auth():
 def add_song():
     if request.method == "POST":
         # Get Party details from database
-        party_details = database.select(party_name_key, request.form[party_name_key])[0]
+        try:
+            party_details = database.select(party_name_key, request.form[party_name_key])[0]
+        except:
+            return render_template("home.html")
         # Create new Party object using details pulled from database
         party_ = Party(party_details[party_name_key], party_details[user_name_key], party_details[auth_code_key],
                        party_details[playlist_id_key])
@@ -77,7 +80,10 @@ def add_song():
         # song_id = spot_actions.find_song(party_, request.form[song_name_key], request.form[artist_name_key])
         # Add the song to the party playlist
         song_id = request.form["uri"]
-        spot_actions.add_song_to_playlist(party_, song_id)
+        try:
+            spot_actions.add_song_to_playlist(party_, song_id)
+        except:
+            return render_template("home.html")
         return render_template("home.html")
 
     return render_template("add_song.html")
