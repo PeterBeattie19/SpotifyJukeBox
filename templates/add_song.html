@@ -9,10 +9,15 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='sources/bootstrap.min.css') }}">
     <script type="text/javascript" src="{{ url_for('static', filename='sources/bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='sources/bootstrap.bundle.min.js') }}"></script>
-
+    <style type="text/css">
+      body 
+      { 
+        background:  #ebeae8 !important; 
+      } 
+    </style>
 </head>
 <body>
-    <!-- <form action="" method="post">
+    <!-- <form action="" method="post"  #f7f6f0 !important;   >
         <input type="text" name="party_name" value="Your Party Name">
         <br><br>
         <input type="text" name="song_name" value="Song Name">
@@ -25,12 +30,14 @@
         <input type="submit" value="Submit">
     </form> -->
 
-<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-        <a class="navbar-brand navbar-title" href="home.html" >Spotify Jukebox</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand navbar-title" href="/" >
+            <h2 class="login-heading" >Spotify Jukebox</h2>
+        </a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Menu
             </a>
               <div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
@@ -38,7 +45,7 @@
                 <!-- <a class="dropdown-item" href="view_party.html">View Party</a> -->
                 <a class="dropdown-item" href="add_song.html">Add Song</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="home.html">Home</a>
+                <a class="dropdown-item" href="/">Home</a>
               </div>
             </li>
           </ul>
@@ -56,31 +63,32 @@
               <h1 class="login-heading mb-4">Add Song</h1>
               <form action="" method="post">
                 <div class="form-label-group">
-                    <input type="text" name="party_name" class="form-control" placeholder="Party" required autofocus>
-                    <label for="party_name">Party</label> 
+                    <input type="text" id ="pname" name="party_name" class="form-control" placeholder="Party" required autofocus>
+                    <label for="pname">Party</label> 
                 </div>
                 <div class="form-label-group">
-                    <input type="text" name="song_name" class="form-control" placeholder="Song" required autofocus>
-                    <label for="song_name">Song</label> 
+                    <input type="text" id ="sname" name="song_name" class="form-control" placeholder="Song">
+                    <label for="sname">Song</label> 
                 </div>
                 <div class="form-label-group">
-                    <input type="text" name="artist_name" class="form-control" placeholder="Artist">
-                    <label for="artist_name">Artist (Optional)</label> 
+                    <input type="text" id ="aname" name="artist_name" class="form-control" placeholder="Artist">
+                    <label for="aname">Artist (Optional)</label> 
                 </div>
                 <div class="form-label-group">
-                    <input type="text" name="uri" class="form-control" placeholder="Spotify URI">
-                    <label for="uri">Song URI (Optional)</label> 
+                    <input type="text" id ="sp_uri" name="uri" class="form-control" placeholder="Spotify URI">
+                    <label for="sp_uri">Song URI (Optional)</label> 
                 </div>
-                 <div class="custom-control custom-checkbox mb-3">
-                    <input type="checkbox" class="custom-control-input" name="explicit_filter">
-                    <label class="custom-control-label" for="explicit_filter">Filter Explicit Songs</label>
-                </div>
-                <input class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit" value="Submit">
+                <!--  <div class="custom-control custom-checkbox mb-3">
+                    <input type="checkbox" id ="check" class="custom-control-input" name="explicit_filter">
+                    <label class="custom-control-label" for="check">Filter Explicit Songs</label>
+                </div> -->
+                <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Submit</button>
               </form>
+
               <!-- currently working on this -->
                 <div>
                     <a name="prev_track">{{ prev_track }}</a>
-                    <a name="current_track" >{{ current_track }}</a>
+                    <a name="current_track" >{{ curr_track_ }}</a>
                     <a name="next_track" >{{ next_track }}</a>
                 </div>
             </div>

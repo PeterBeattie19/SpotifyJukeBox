@@ -12,7 +12,7 @@ class SpotifyActions:
         return sp.user_playlist_create(user=party.user, name=party.party_name)
 
     @staticmethod
-    def add_song_to_playlist(party, song_id, explict_filter=None):
+    def add_song_to_playlist(party, song_id):
         sp = party.spotify
         sp.user_playlist_add_tracks(user=party.user, playlist_id=party.playlist_id, tracks=[song_id])
 
@@ -24,12 +24,8 @@ class SpotifyActions:
     @staticmethod
     def get_current_track(party):
         sp = party.spotify
-        return sp.currently_playing()
-
-    @staticmethod
-    def get_current_track(party):
-        sp = party.spotify
-        return sp.currently_playing()
+        user = party.user
+        return user.currently_playing()
 
     def get_authorize_url(self):
         return self.sp_oauth.get_authorize_url()

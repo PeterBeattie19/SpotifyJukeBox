@@ -9,7 +9,12 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='sources/bootstrap.min.css') }}">
     <script type="text/javascript" src="{{ url_for('static', filename='sources/bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='sources/bootstrap.bundle.min.js') }}"></script>
-
+    <style type="text/css">
+      body 
+      { 
+        background:  #ebeae8 !important; 
+      } 
+    </style>
 </head>
 <body>
     <!-- <form action="" method="post">
@@ -22,12 +27,14 @@
         <input type="submit" value="Submit">
     </form> -->
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-        <a class="navbar-brand navbar-title" href="home.html" >Spotify Jukebox</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand navbar-title" href="/" >
+            <h2 class="login-heading" >Spotify Jukebox</h2>
+        </a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Menu
             </a>
               <div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
@@ -35,7 +42,7 @@
                 <!-- <a class="dropdown-item" href="view_party.html">View Party</a> -->
                 <a class="dropdown-item" href="add_song.html">Add Song</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="home.html">Home</a>
+                <a class="dropdown-item" href="/">Home</a>
               </div>
             </li>
           </ul>
@@ -53,18 +60,21 @@
                   <h1 class="login-heading mb-4">Create Party</h1>
                   <form action="" method="post">
                     <div class="form-label-group">
-                        <input type="text" name="party_name" class="form-control" placeholder="Party" required autofocus>
-                        <label for="party_name">Party Name</label> 
+                      <input type="text" id="pname" name="party_name" class="form-control" placeholder="Party Name" required autofocus>
+                      <label for="pname">Party Name</label>
                     </div>
-                    <!-- doesn't display nicely, also does this need to be shown?-->
+
                     <div class="form-label-group">
-                        <input type="text" name="auth_code" class="form-control" value="{{ auth_code_ }}" required autofocus>
+                        <input type="text" id="code" name="auth_code" class="form-control" value="{{ auth_code_ }}" required readonly>
+                        <label for="code">Authorisation Code</label>
                     </div>
+
                     <div class="form-label-group">
-                        <input type="text" name="user_name" class="form-control" placeholder="Username" required autofocus>
-                        <label for="artist_name">Your Spotify Username</label> 
+                      <input type="text" id="uname" name="user_name" class="form-control" placeholder="Your Spotify Username" required autofocus>
+                      <label for="uname">Your Spotify Username</label>
                     </div>
-                    <input class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit" value="Submit">
+
+                    <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Submit</button>
                   </form>
                 </div>
               </div>

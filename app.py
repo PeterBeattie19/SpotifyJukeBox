@@ -65,7 +65,7 @@ def get_auth():
     return redirect(spot_actions.get_authorize_url())
 
 
-@app.route("/add_song", methods=['GET', 'POST'])
+@app.route("/add_song.html", methods=['GET', 'POST'])
 def add_song():
     if request.method == "POST":
         # Get Party details from database
@@ -77,18 +77,11 @@ def add_song():
         # song_id = spot_actions.find_song(party_, request.form[song_name_key], request.form[artist_name_key])
         # Add the song to the party playlist
         song_id = request.form["uri"]
-        # filter songs
-        explicit_filter = request.form["explicit_filter"]
-        spot_actions.add_song_to_playlist(party_, song_id, explicit_filter)
 
-        # playlist = spot_actions.get_playlist(party_)
-        # current_track = spot_actions.get_current_track()
-        # # index of current in playlist
-        # current_track_index = playlist.index('')
-        # # todo: error handling for this
-        # prev_track = playlist[current_track_index-1]
-        # next_track = playlist[current_track_index+1]
-        # , current_track_=spot_actions.get_current_track(), prev_track_= , next_track_=
+        # filter songs
+        # explicit_filter = request.form["explicit_filter"]
+        spot_actions.add_song_to_playlist(party_, song_id)
+        # spot_actions.add_song_to_playlist(party_, song_id, explicit_filter)
         return render_template("home.html")
     return render_template("add_song.html")
 
